@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BasicAPI</name>
+    </assembly>
+    <members>
+        <member name="M:BasicAPI.Controllers.PersonController.GetPeople">
+            <summary>
+            Returns a list of all People Entities filtered through PersonDtos
+            </summary>
+            <returns>An ActionResult IEnumerable of PersonDto</returns>
+            <response code= "200">Returns a list of PeopleDtos</response>
+        </member>
+        <member name="M:BasicAPI.Controllers.PersonController.GetById(System.Int32)">
+            <summary>
+            Returns a Person by id
+            </summary>
+            <param name="id">The id of the Person to get</param>
+            <returns>An ActionResult of PersonDto</returns>
+            <response code="200">Returns the requested Person</response>
+            <response code="404">Person id does not exist</response>
+            <response code="400">Person request was not valid</response>
+        </member>
+        <member name="M:BasicAPI.Controllers.PersonController.AddPerson(BasicAPI.Models.PersonCreateDto)">
+            <summary>
+            Posts a new Person to the database
+            </summary>
+            <param name="person">New person entity to parse</param>
+            <returns>An ActionResult of PersonDto</returns>
+            <response code="200">Returns posted new Person</response>
+            <response code="400">User request was not valid</response>
+        </member>
+        <member name="M:BasicAPI.Controllers.PersonController.DeletePerson(System.Int32)">
+            <summary>
+            Deletes a Person from the database
+            </summary>
+            <param name="id">The id of the Person to delete from database</param>
+            <returns>An ActionResult</returns>
+            <response code="204">Person has been deleted from database</response>
+            <response code="404">User request was not valid</response>
+        </member>
+        <member name="M:BasicAPI.Controllers.PersonController.UpdatePerson(System.Int32,BasicAPI.Models.PersonUpdateDto)">
+            <summary>
+            Completely updates a Person in the database
+            </summary>
+            <param name="id">The id of the Person to update</param>
+            <param name="person">New Person to update current Person</param>
+            <returns>An ActionResult</returns>
+            <response code="204">Person has been updated</response>
+            <response code="400">User request was not valid</response>
+            <response code="404">Person to replace was not found</response>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:BasicAPI.Controllers.PersonController.PartialUpdatePerson(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{BasicAPI.Models.PersonUpdateDto})" -->
+        <member name="T:BasicAPI.Migrations.InitialPersonContextCommit">
+            <inheritdoc />
+        </member>
+        <member name="M:BasicAPI.Migrations.InitialPersonContextCommit.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BasicAPI.Migrations.InitialPersonContextCommit.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BasicAPI.Migrations.InitialPersonContextCommit.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
