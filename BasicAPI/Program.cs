@@ -15,19 +15,19 @@ builder.Services.AddControllers(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(setupAction =>
-{
+{// /// comments in Controllers are converted into an XML document and added to the swagger page for documentation
     var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
 
     setupAction.IncludeXmlComments(xmlCommentsFullPath);
 });
 
+//Set database location through appsettings.json
 builder.Services.AddDbContext<PeopleContext>(
     dbContextOptions => dbContextOptions.UseSqlite(
         builder.Configuration["ConnectionStrings:PeopleDBConnectionString"]));
 
 builder.Services.AddScoped<IRepository<Person>, PersonRepository<Person>>();
-
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
@@ -40,11 +40,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

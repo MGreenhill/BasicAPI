@@ -53,15 +53,9 @@ namespace BasicAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PersonDto>> GetById(int id)
         {
-            //Request
+            //Requests a existing person based its id
             var person = await _repository.GetById(id);
             return person == null ? NotFound() : Ok(_mapper.Map<PersonDto>(person));
-            //if (person == null)
-            //{
-            //    return NotFound();
-            //}
-
-            //return Ok(_mapper.Map<PersonDto>(person));
 
         }
 
@@ -78,6 +72,8 @@ namespace BasicAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PersonDto>> AddPerson([FromBody] PersonCreateDto person)
         {
+            //Attempt to map incoming Dto to an entity and add it to the database.
+            //Returns created person or bad request
             try
             {
                 var addedPerson = _mapper.Map<Entities.Person>(person);
@@ -106,11 +102,13 @@ namespace BasicAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult> DeletePerson(int id)
         {
+            //Check if entity exists
             var personToDelete = await _repository.GetById(id);
             if (personToDelete == null) {
                 return NotFound();
             }
 
+            //Request repository to delete entity and then save
             await _repository.Delete(id);
             await _repository.Save();
 
@@ -133,12 +131,14 @@ namespace BasicAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult> UpdatePerson(int id, [FromBody] PersonUpdateDto person)
         {
+            //Check if entity to update exists
             var personEntity = await _repository.GetById(id);
             if (personEntity == null)
             {
                 return NotFound();
             }
 
+            //Attempt to map Dto as entity then have respository replace current entity.
             try
             {
                 var updatedPerson = _mapper.Map<Entities.Person>(person);
@@ -167,12 +167,15 @@ namespace BasicAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult> PartialUpdatePerson(int id, [FromBody] JsonPatchDocument<PersonUpdateDto> patchDocument)
         {
+            //Check if entity exists
             var personEntity = await _repository.GetById(id);
             if (personEntity == null)
             {
                 return NotFound();
             }
 
+            //Attempt to map JsonPatchDocument<PersonUpdateDto> to JsonPatchDocument
+            //Then have respository attempt to apply patch.
             try
             {
                 var convertedPatch = _mapper.Map<JsonPatchDocument>(patchDocument);

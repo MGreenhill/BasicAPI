@@ -5,6 +5,9 @@ namespace BasicAPI.Models
 {
     public class PersonDto
     {
+        //DTO for PullRequests
+        //Returns all properties, a full Name, and a Description
+        //Json requests only show Name and Description
         [JsonIgnore]
         public int Id { get; set; }
 

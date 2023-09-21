@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "K:\\Projects\\CSharp\\BasicAPI\\BasicAPI\\BasicAPI.csproj": {}
+    "K:\\Projects\\GitHub\\BasicAPI\\BasicAPI\\BasicAPI.csproj": {}
   },
   "projects": {
-    "K:\\Projects\\CSharp\\BasicAPI\\BasicAPI\\BasicAPI.csproj": {
+    "K:\\Projects\\GitHub\\BasicAPI\\BasicAPI\\BasicAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "K:\\Projects\\CSharp\\BasicAPI\\BasicAPI\\BasicAPI.csproj",
+        "projectUniqueName": "K:\\Projects\\GitHub\\BasicAPI\\BasicAPI\\BasicAPI.csproj",
         "projectName": "BasicAPI",
-        "projectPath": "K:\\Projects\\CSharp\\BasicAPI\\BasicAPI\\BasicAPI.csproj",
+        "projectPath": "K:\\Projects\\GitHub\\BasicAPI\\BasicAPI\\BasicAPI.csproj",
         "packagesPath": "C:\\Users\\Matt\\.nuget\\packages\\",
-        "outputPath": "K:\\Projects\\CSharp\\BasicAPI\\BasicAPI\\obj\\",
+        "outputPath": "K:\\Projects\\GitHub\\BasicAPI\\BasicAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

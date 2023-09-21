@@ -5,6 +5,8 @@ namespace BasicAPI.Models
 {
     public class PersonCreateDto
     {
+        //DTO for Post Requests
+        //Only accepts FirstName, LastName, Profession, and Age.
         [Required(ErrorMessage ="")]
         [StringLength(25)]
         public string FirstName { get; set; }

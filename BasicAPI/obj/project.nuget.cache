@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3uhtRTfIFUGfD6Hrh6IKjLw+rd5CvF5vCNkkaZ2z2bZ5XilsJVlkKx7y1lV3e/VXItbAUcOTS6wK9pO9v9DxiA==",
+  "dgSpecHash": "wp19r0s++/qQ+jBk9RFXpeucho8DJ8CCMSSKKZuzJdKMIzvzJiJwgyog32YURLqZSs2KNZ7Jow1TTr3+sFF2BA==",
   "success": true,
-  "projectFilePath": "K:\\Projects\\CSharp\\BasicAPI\\BasicAPI\\BasicAPI.csproj",
+  "projectFilePath": "K:\\Projects\\GitHub\\BasicAPI\\BasicAPI\\BasicAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matt\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Matt\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

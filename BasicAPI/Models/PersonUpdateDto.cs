@@ -4,6 +4,7 @@ namespace BasicAPI.Models
 {
     public class PersonUpdateDto
     {
+        //DTO for Put requests
         [Required]
         public int Id { get; set; }
 
